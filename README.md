@@ -1,18 +1,18 @@
 # Lab 0: Go tutorial
 
-In this tutorial, we will briefly go over the most important concepts of the Go programming language. You will create a dashboard application visualizing data of the Massachusetts Bay Transportation Authority (MBTA). The main goal of the lab and the linked tutorials is to have you play around with Go --- familiarizing yourself with the covered concepts will come in handy for future labs! :)
+在此次教程中，我们将简单介绍GO语言中最重要的概念。你将创建一个可视化MBTA（Massachusetts Bay Transportation Authority，即MIT所在地的--马萨诸塞湾交通管理局）数据的仪表盘。实验的主要目标和相关教程是为了让你熟悉GO语言--因为其涵盖的相关概念将会在未来的实验中派上用场。
 
 ## Installation
 
-1. Follow [these instructions](https://go.dev/doc/install) to install Go.
+1. 安装GO环境
 
- 2. We recommend using VisualStudio Code to work on the labs. VisualStudio Code can be downloaded [from here](https://code.visualstudio.com/download). After installation, make sure to add Go extensions and tools: Open VS Code, open the extension manager by pressing `Ctrl + Shift + x`, type "go" into the search bar and hit enter, find the Go extension by the GO team at Google and install it, open the command palette by pressing `Ctrl + Shift + p`, run `Go: Install/Update Tools`, select all tools and click ok.
+ 2. 建议用VSCODE。需要自行配置安装GO插件和GO依赖。
 
- 3. Clone this github repository: In a directory of your choice, run `git clone https://github.com/MIT-DB-Class/lab0`.
+ 3. 把仓库clone到本地。 `git clone https://github.com/MIT-DB-Class/lab0`.
 
- 4. [Download the database file](https://www.dropbox.com/s/37k6lrqd9uq52aa/mbta.sqlite?dl=1) `mbta.sqlite` and place it in the `lab0` directory (where `main.go` is).
+ 4. 下载数据库文件mbta.sqlite，并将其放至main.go所在的文件夹.(我已经放进repo里了，800多mb还只能翻墙下载得下半天。)
 
- 5. You should be all set! You can run the code  by typing `go run main.go` in your terminal from the `lab0` directory or clicking on "Run and Debug" in VS Code (on the very left, click on the icon with the bug and the triangle and then on "Run and Debug").
+ 5. 前置准备完成！现在在maIn.go文件夹下运行`go run main.go`指令。或者在vscode中进行调试。
 
 ## Lab and Go walk through
 
