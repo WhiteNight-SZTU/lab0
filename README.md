@@ -10,13 +10,13 @@
 
  3. 把仓库clone到本地。 `git clone https://github.com/MIT-DB-Class/lab0`.
 
- 4. 下载数据库文件mbta.sqlite，并将其放至main.go所在的文件夹.(我已经放进repo里了，800多mb还只能翻墙下载得下半天。)
+ 4. [下载数据库文件mbta.sqlite](https://www.dropbox.com/s/37k6lrqd9uq52aa/mbta.sqlite?dl=1)，并将其放至main.go所在的文件夹.(800多mb放不进repo，lfs都放不下。)
 
  5. 前置准备完成！现在在maIn.go文件夹下运行`go run main.go`指令。或者在vscode中进行调试。
 
-## Lab and Go walk through
+## GO实验练习
 
-In the following, we walk you through the lab and want to point your attention towards some Go features. After the installation, the structure of your project should look as follows:
+接下来，我们将带你熟悉本次实验并了解一下GO语言的特征。在安装完成后，你的项目结构应该如下所示:
 
 ```
  .
@@ -33,7 +33,7 @@ In the following, we walk you through the lab and want to point your attention t
  │ └─ render_chart.go
  ├─ main.go
  ├─ mbta.csv
- ├─ mbta.sqlite  # TODO: download using link above
+ ├─ mbta.sqlite  # TODO: 记得下载该文件
  ├─ go.mod
  ├─ go.sum
  └─ README.md
