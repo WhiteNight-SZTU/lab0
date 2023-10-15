@@ -4,7 +4,6 @@ import (
 	"encoding/csv"
 	"fmt"
 	"os"
-
 )
 
 type CsvRidershipDB struct {
@@ -12,6 +11,16 @@ type CsvRidershipDB struct {
 	csvFile       *os.File
 	csvReader     *csv.Reader
 	num_intervals int
+}
+
+// Close implements RidershipDB.
+func (*CsvRidershipDB) Close() error {
+	panic("unimplemented")
+}
+
+// GetRidership implements RidershipDB.
+func (*CsvRidershipDB) GetRidership(lineId string) ([]int64, error) {
+	panic("unimplemented")
 }
 
 func (c *CsvRidershipDB) Open(filePath string) error {

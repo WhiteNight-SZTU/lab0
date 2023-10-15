@@ -41,11 +41,11 @@
 
 ### Hello world
 
-In this lab you will implement a simple http server that visualizes ridership data from Boston's MBTA metro system. Go provides many tutorials with small sample applications that are a great way to play around with features of the language. For example, [this tutorial](https://go.dev/tour/basics/1) gives an introduction on Go's basic syntax, from structuring your files to writing a "Hello world" program.
+在此次实验中，我们将编写一个简单的http服务器以可视化波士顿MBTA地铁系统的乘客量数据。GO官方提供了一个能让你熟悉GO语言相关特性的教程网站。 [该教程](https://go.dev/tour/basics/1) 适合初学GO语言的人，可以先参考一下教程中“Hello World"的实现。
 
-Please use the linked tutorials and documentation to familiarize yourself with the Go language, which we will use for all labs in this course. The tutorials and documentation linked in this lab should allow you to fill out the missing functions required for the web app.
+你需要熟练掌握本文所链接的教程和文档，因为它们将贯穿本课程的所有实验。掌握这些文档和教程后，你就应该能自行补充实验中所需web应用缺失的功能。
 
-Please look at [this documentation](https://pkg.go.dev/net/http#hdr-Servers) for an overview on how http servers are created in Go.
+关于如何在GO语言中创建http服务器可以参考 [该文档](https://pkg.go.dev/net/http#hdr-Servers) 
 
 
 ### Error handling
@@ -79,7 +79,7 @@ Both the `SqliteRidershipDB` type and the `CsvRidershipDB` type implement the `R
 
 ### It doesn't stop here
 
-The above resources provide a very brief overview of the most important features of the Go language. However, there are many more resources online as Go has a large and supportive community. We strongly encourage you to explore these resources and gain more experience with Go. If you find any tutorials particularly useful, please send them to us! :) 65830-staff [at] mit [dot] edu
+The above resources provide a very brief overview of the most important features of the Go language. However, there are many more resources online as Go has a large and supportive community. We strongly encourage you to explore these resources and gain more experience with Go. 
 
 
 ## The Assignment

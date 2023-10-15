@@ -1,11 +1,9 @@
 package handlers
 
 import (
-	"encoding/base64"
 	"fmt"
 	"html/template"
 	rdb "main/ridership_db"
-	"main/utils"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -22,10 +20,10 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	// instantiate ridershipDB
 	var db rdb.RidershipDB = &rdb.SqliteRidershipDB{} // Sqlite implementation
 	// var db rdb.RidershipDB = &rdb.CsvRidershipDB{} // CSV implementation
-
+	fmt.Fprintln(w, "Hello, this is the home page!")
 	// TODO: some code goes here
 	// Get the chart data from RidershipDB
-
+	_ = db
 	// TODO: some code goes here
 	// Plot the bar chart using utils.GenerateBarChart. The function will return the bar chart
 	// as PNG byte slice. Convert the bytes to a base64 string, which is used to embed images in HTML.
@@ -55,7 +53,7 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		Image: "", // TODO: base64 string
 		Chart: selectedChart,
 	}
-
+	_, _ = tmpl, data
 	// TODO: some code goes here
 	// Use tmpl.Execute to generate the final HTML output and send it as a response
 	// to the client's request.
