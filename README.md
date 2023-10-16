@@ -1,22 +1,22 @@
 # Lab 0: Go tutorial
 
-在此次教程中，我们将简单介绍GO语言中最重要的概念。你将创建一个可视化MBTA（Massachusetts Bay Transportation Authority，即MIT所在地的--马萨诸塞湾交通管理局）数据的仪表盘。实验的主要目标和相关教程是为了让你熟悉GO语言--因为其涵盖的相关概念将会在未来的实验中派上用场。
+In this tutorial, we will briefly go over the most important concepts of the Go programming language. You will create a dashboard application visualizing data of the Massachusetts Bay Transportation Authority (MBTA). The main goal of the lab and the linked tutorials is to have you play around with Go --- familiarizing yourself with the covered concepts will come in handy for future labs! :)
 
 ## Installation
 
-1. 安装GO环境
+1. Follow [these instructions](https://go.dev/doc/install) to install Go.
 
- 2. 建议用VSCODE。需要自行配置安装GO插件和GO依赖。
+ 2. We recommend using VisualStudio Code to work on the labs. VisualStudio Code can be downloaded [from here](https://code.visualstudio.com/download). After installation, make sure to add Go extensions and tools: Open VS Code, open the extension manager by pressing `Ctrl + Shift + x`, type "go" into the search bar and hit enter, find the Go extension by the GO team at Google and install it, open the command palette by pressing `Ctrl + Shift + p`, run `Go: Install/Update Tools`, select all tools and click ok.
 
- 3. 把仓库clone到本地。 `git clone https://github.com/MIT-DB-Class/lab0`.
+ 3. Clone this github repository: In a directory of your choice, run `git clone https://github.com/MIT-DB-Class/lab0`.
 
- 4. [下载数据库文件mbta.sqlite](https://www.dropbox.com/s/37k6lrqd9uq52aa/mbta.sqlite?dl=1)，并将其放至main.go所在的文件夹.(800多mb放不进repo，lfs都放不下。)
+ 4. [Download the database file](https://www.dropbox.com/s/37k6lrqd9uq52aa/mbta.sqlite?dl=1) `mbta.sqlite` and place it in the `lab0` directory (where `main.go` is).
 
- 5. 前置准备完成！现在在maIn.go文件夹下运行`go run main.go`指令。或者在vscode中进行调试。
+ 5. You should be all set! You can run the code  by typing `go run main.go` in your terminal from the `lab0` directory or clicking on "Run and Debug" in VS Code (on the very left, click on the icon with the bug and the triangle and then on "Run and Debug").
 
-## GO实验练习
+## Lab and Go walk through
 
-接下来，我们将带你熟悉本次实验并了解一下GO语言的特征。在安装完成后，你的项目结构应该如下所示:
+In the following, we walk you through the lab and want to point your attention towards some Go features. After the installation, the structure of your project should look as follows:
 
 ```
  .
@@ -33,7 +33,7 @@
  │ └─ render_chart.go
  ├─ main.go
  ├─ mbta.csv
- ├─ mbta.sqlite  # TODO: 记得下载该文件
+ ├─ mbta.sqlite  # TODO: download using link above
  ├─ go.mod
  ├─ go.sum
  └─ README.md
@@ -41,11 +41,11 @@
 
 ### Hello world
 
-在此次实验中，我们将编写一个简单的http服务器以可视化波士顿MBTA地铁系统的乘客量数据。GO官方提供了一个能让你熟悉GO语言相关特性的教程网站。 [该教程](https://go.dev/tour/basics/1) 适合初学GO语言的人，可以先参考一下教程中“Hello World"的实现。
+In this lab you will implement a simple http server that visualizes ridership data from Boston's MBTA metro system. Go provides many tutorials with small sample applications that are a great way to play around with features of the language. For example, [this tutorial](https://go.dev/tour/basics/1) gives an introduction on Go's basic syntax, from structuring your files to writing a "Hello world" program.
 
-你需要熟练掌握本文所链接的教程和文档，因为它们将贯穿本课程的所有实验。掌握这些文档和教程后，你就应该能自行补充实验中所需web应用缺失的功能。
+Please use the linked tutorials and documentation to familiarize yourself with the Go language, which we will use for all labs in this course. The tutorials and documentation linked in this lab should allow you to fill out the missing functions required for the web app.
 
-关于如何在GO语言中创建http服务器可以参考 [该文档](https://pkg.go.dev/net/http#hdr-Servers) 
+Please look at [this documentation](https://pkg.go.dev/net/http#hdr-Servers) for an overview on how http servers are created in Go.
 
 
 ### Error handling
@@ -79,7 +79,7 @@ Both the `SqliteRidershipDB` type and the `CsvRidershipDB` type implement the `R
 
 ### It doesn't stop here
 
-The above resources provide a very brief overview of the most important features of the Go language. However, there are many more resources online as Go has a large and supportive community. We strongly encourage you to explore these resources and gain more experience with Go. 
+The above resources provide a very brief overview of the most important features of the Go language. However, there are many more resources online as Go has a large and supportive community. We strongly encourage you to explore these resources and gain more experience with Go. If you find any tutorials particularly useful, please send them to us! :) 65830-staff [at] mit [dot] edu
 
 
 ## The Assignment
