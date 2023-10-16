@@ -1,9 +1,10 @@
 package handlers
 
 import (
-	"fmt"
+	"encoding/base64"
 	"html/template"
 	rdb "main/ridership_db"
+	"main/utils"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -20,14 +21,20 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	// instantiate ridershipDB
 	var db rdb.RidershipDB = &rdb.SqliteRidershipDB{} // Sqlite implementation
 	// var db rdb.RidershipDB = &rdb.CsvRidershipDB{} // CSV implementation
-	fmt.Fprintln(w, "Hello, this is the home page!")
+
 	// TODO: some code goes here
 	// Get the chart data from RidershipDB
-	_ = db
+	db.Open("C:/Users/LENOVO/Desktop/Github/lab0/mbta.sqlite")
+	chartdata, err := db.GetRidership(selectedChart)
+	defer db.Close()
 	// TODO: some code goes here
 	// Plot the bar chart using utils.GenerateBarChart. The function will return the bar chart
 	// as PNG byte slice. Convert the bytes to a base64 string, which is used to embed images in HTML.
-
+	barChartImage, err := utils.GenerateBarChart(chartdata)
+	if barChartImage == nil {
+		_ = barChartImage
+	}
+	barChartBase64 := base64.StdEncoding.EncodeToString(barChartImage)
 	// Get path to the HTML template for our web app
 	_, currentFilePath, _, _ := runtime.Caller(0)
 	templateFile := filepath.Join(filepath.Dir(currentFilePath), "template.html")
@@ -50,11 +57,11 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		Image string
 		Chart string
 	}{
-		Image: "", // TODO: base64 string
+		Image: barChartBase64, // TODO: base64 string
 		Chart: selectedChart,
 	}
-	_, _ = tmpl, data
 	// TODO: some code goes here
 	// Use tmpl.Execute to generate the final HTML output and send it as a response
 	// to the client's request.
+	tmpl.Execute(w, data)
 }
