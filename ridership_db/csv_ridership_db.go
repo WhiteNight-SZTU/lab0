@@ -3,7 +3,9 @@ package ridershipDB
 import (
 	"encoding/csv"
 	"fmt"
+	"io"
 	"os"
+	"strconv"
 )
 
 type CsvRidershipDB struct {
@@ -14,13 +16,39 @@ type CsvRidershipDB struct {
 }
 
 // Close implements RidershipDB.
-func (*CsvRidershipDB) Close() error {
-	panic("unimplemented")
+func (c *CsvRidershipDB) Close() error {
+	//panic("unimplemented")
+	err := c.csvFile.Close()
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 // GetRidership implements RidershipDB.
-func (*CsvRidershipDB) GetRidership(lineId string) ([]int64, error) {
-	panic("unimplemented")
+func (c *CsvRidershipDB) GetRidership(lineId string) ([]int64, error) {
+	//panic("unimplemented")
+	boardings := make([]int64, c.num_intervals)
+
+	for {
+		records, err := c.csvReader.Read()
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			return nil, err
+		}
+		if records[0] == lineId {
+			sum, err := strconv.ParseInt(records[4], 10, 64)
+			if err != nil {
+				return nil, err
+			}
+			boardings[c.idIdxMap[records[2]]] += sum
+		}
+
+	}
+
+	return boardings, nil
 }
 
 func (c *CsvRidershipDB) Open(filePath string) error {
